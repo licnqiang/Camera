@@ -1,0 +1,48 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.huawei.ohos.app'
+
+ohos {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\Admin\\.ohos\\config\\auto_debug_camer_40086000025431770.p12')
+            storePassword '00000018D963B18D5FC94E6296CD4739311123D6B9BB228AFAF8752933E491DB1EB9629F85941AA8'
+            keyAlias = 'debugKey'
+            keyPassword '0000001880A00E0C2B0BFD26F5B2C2D65DF8143047A83928A053C06409F5CF4552417BD2BE2F4D0A'
+            signAlg = 'SHA256withECDSA'
+            profile file('C:\\Users\\Admin\\.ohos\\config\\auto_debug_camer_40086000025431770.p7b')
+            certpath file('C:\\Users\\Admin\\.ohos\\config\\auto_debug_camer_40086000025431770.cer')
+        }
+    }
+    compileSdkVersion 5
+    defaultConfig {
+        compatibleSdkVersion 4
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url 'https://repo.huaweicloud.com/repository/maven/'
+        }
+        maven {
+            url 'https://developer.huawei.com/repo/'
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.huawei.ohos:hap:3.0.3.4'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://repo.huaweicloud.com/repository/maven/'
+        }
+        maven {
+            url 'https://developer.huawei.com/repo/'
+        }
+        jcenter()
+    }
+}
+
